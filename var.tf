@@ -70,3 +70,8 @@ variable mac_address {
   type = "string"
   description = "mac address of the VM"
 }
+
+variable ip_address {
+  type = "string"
+  description = "ip address of the VM"
+}
