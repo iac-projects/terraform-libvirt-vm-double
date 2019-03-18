@@ -42,16 +42,14 @@ variable num_cpu {
   description = "number of vCPU which VM has"
 }
 
-variable private_network_bridge {
+variable network_bridge_1 {
   type = "string"
-  default = "virbr0"
-  description = "existing network bridge on host that VM needs to connect to private network"
+  description = "existing network bridge on host that VM needs"
 }
 
-variable public_network_bridge {
+variable network_bridge_2 {
   type = "string"
-  default = "virbr1"
-  description = "existing network bridge on host that VM needs to connect to public network"
+  description = "existing network bridge on host that VM needs"
 }
 
 variable user_data {
