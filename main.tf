@@ -5,7 +5,7 @@ resource "libvirt_volume" "vm_volume" {
   format = "${var.disk_format}"
 }
 
-resource "libvirt_cloudinit" "vm_init" {
+resource "libvirt_cloudinit_disk" "vm_init" {
   name  = "${var.instance_name}-init.iso"
 
   user_data = "${var.user_data}"
@@ -17,7 +17,7 @@ resource "libvirt_domain" "vm_domain" {
   vcpu        = "${var.num_cpu}"
   autostart   = "${var.autostart}"
 
-  cloudinit = "${libvirt_cloudinit.vm_init.id}"
+  cloudinit = "${libvirt_cloudinit_disk.vm_init.id}"
 
   network_interface {
     bridge         = "${var.network_bridge_1}"
