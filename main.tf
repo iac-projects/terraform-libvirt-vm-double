@@ -6,27 +6,29 @@ resource "libvirt_volume" "vm_volume" {
 }
 
 resource "libvirt_cloudinit_disk" "vm_init" {
-  name  = "${var.instance_name}-init.iso"
+  name = "${var.instance_name}-init.iso"
 
   user_data = "${var.user_data}"
 }
 
 resource "libvirt_domain" "vm_domain" {
-  name        = "${var.instance_name}"
-  memory      = "${var.memory_size}"
-  vcpu        = "${var.num_cpu}"
-  autostart   = "${var.autostart}"
+  name      = "${var.instance_name}"
+  memory    = "${var.memory_size}"
+  vcpu      = "${var.num_cpu}"
+  autostart = "${var.autostart}"
 
   cloudinit = "${libvirt_cloudinit_disk.vm_init.id}"
 
   network_interface {
-    bridge         = "${var.network_bridge_1}"
+    network_name   = "${var.network_name_1}"
+    mac            = "${var.mac_address_2}"
     hostname       = "${var.instance_name}"
     wait_for_lease = false
   }
 
   network_interface {
-    bridge         = "${var.network_bridge_2}"
+    network_name   = "${var.network_name_2}"
+    mac            = "${var.mac_address_2}"
     hostname       = "${var.instance_name}"
     wait_for_lease = false
   }
