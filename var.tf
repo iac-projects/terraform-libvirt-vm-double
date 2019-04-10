@@ -10,7 +10,6 @@ variable instance_name {
 
 variable pool_name {
   type        = "string"
-  default     = "default"
   description = "name of pool to store disk and iso image"
 }
 
