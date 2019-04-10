@@ -3,6 +3,7 @@ resource "libvirt_volume" "vm_volume" {
   pool   = "${var.pool_name}"
   source = "${var.source_path}"
   format = "${var.disk_format}"
+  size = "${var.disk_size}"
 }
 
 resource "libvirt_cloudinit_disk" "vm_init" {

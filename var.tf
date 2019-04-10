@@ -13,6 +13,11 @@ variable pool_name {
   description = "name of pool to store disk and iso image"
 }
 
+variable disk_size {
+  type        = "string"
+  description = "disk size"
+}
+
 variable source_path {
   type        = "string"
   description = "path to qcow2 base image, can be remote url or local disk path"
