@@ -21,7 +21,7 @@ resource "libvirt_domain" "vm_domain" {
 
   network_interface {
     network_name   = "${var.network_name_1}"
-    mac            = "${var.mac_address_2}"
+    mac            = "${var.mac_address_1}"
     hostname       = "${var.instance_name}"
     wait_for_lease = false
   }
