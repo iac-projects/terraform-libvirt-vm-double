@@ -73,8 +73,3 @@ variable mac_address_2 {
   type        = "string"
   description = "mac address1 of interface 2"
 }
-
-variable ip_address {
-  type        = "string"
-  description = "ip address of the VM"
-}
